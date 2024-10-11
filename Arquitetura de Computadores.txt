@@ -1,0 +1,9 @@
+Para receber um input em Assembly é necessário iniciar o registrador 2 com um addi de entrada 5 e acionar o syscall;
+
+Após isso, guarda o valor do input em outro registrador;
+
+Para imprimir um output o valor deve estar sempre no registrador 4, após isso, deve se acionar o registrador 2 com o com um addi de entrada 1 se a saída for um inteiro
+ou 11 se for um caracter;
+
+Após isso, aciona o syscall;
+
