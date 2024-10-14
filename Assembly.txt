@@ -1,0 +1,16 @@
+addi $2, $0, 5 -> input número inteiro
+syscall
+
+addi $2, $0, 12 -> input caractere
+syscall
+
+add $4, $0, $fonte
+addi $2, $0, 1 -> printar número inteiro
+syscall 
+
+addi $4, $0, ''
+addi $2, $0, 11 -> printar caractere
+syscall 
+
+addi $2, $0, 10 -> encerrar o programa
+syscall
