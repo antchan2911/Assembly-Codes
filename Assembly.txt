@@ -14,3 +14,8 @@ syscall
 
 addi $2, $0, 10 -> encerrar o programa
 syscall
+
+SRA -> Mantém o bit de sinal, importante para dividir números negativos
+SRL / SLL -> Desloca adicionando 0 na direita(divide por 2) / Desloca adicionando 0 na esquerda(multiplica por 2)
+
+Tanto o SRA quanto o SRL pode ser usado para dividir números positivos
