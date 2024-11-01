@@ -27,3 +27,5 @@ beq $8, $9, rotulo
 bne -> se o conteúdo de dois registradores forem diferentes, vai para um rótulo:
 
 bne $8, $9, rotulo
+
+j rotulo -> essa instrução desvia de qualquer forma o fluxo para um rotulo, importante para o else
