@@ -20,6 +20,8 @@ SRL / SLL -> Desloca adicionando 0 na direita(divide por 2) / Desloca adicionand
 
 Tanto o SRA quanto o SRL pode ser usado para dividir números positivos
 
+// CONDICIONAL
+
 beq -> Se o conteúdo de dois registradores forem iguais, vai para um rótulo:
 
 beq $8, $9, rotulo
@@ -33,3 +35,19 @@ j rotulo -> Essa instrução desvia de qualquer forma o fluxo para um rotulo, im
 slt -> Essa instrução compara se o valor de um registrador é menor que o do outro, se for ele guarda 1(true) no registrador destino ou 0(false):
 
 slt $10, $8, $9 -> Guarda 1 em $10 se $8 for menor que $9 ou 0 se não for
+
+// LAÇO(for)
+
+primeiro cria-se um rotulo para o laço
+
+depois adiociona-se em um registrador o range
+
+depois adiciona-se em outro o valor da variável de inicialização(i)
+
+faz um beq de comparação para ver se são iguais(se forem, vai para um rotulo de fim de laço)
+
+senão, vai para um bloco de código
+
+após o bloco de código, incrementa / decrementa na variável inicializada
+
+por fim, utiliza-se o j para retornar para o rotulo do laço
