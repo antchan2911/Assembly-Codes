@@ -51,3 +51,20 @@ senão, vai para um bloco de código
 após o bloco de código, incrementa / decrementa na variável inicializada
 
 por fim, utiliza-se o j para retornar para o rotulo do laço
+
+
+// VETORES
+
+lw -> carrega o dado que tiver no endereço de memoria para um registrador destino
+
+lw $destino, imm($x) -> imm + $x = endereço de memeoria do dado
+
+sw -> grava o dado de um registrador fonte em um endereço de memoria
+
+sw $fonte, imm($x) -> imm + $x = endereço que vai receber
+
+lui -> guarda na parte alta de um regsitrador (bits 16 a 31) um valor hexadecimal
+
+lui $destino, 0x1001 -> primeiro endereço de memoria
+
+addi $destino, $destino, 4 -> próximo endereço e por ai vai
