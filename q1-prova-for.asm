@@ -20,14 +20,15 @@ forInt:
 	addi $4, $0, ' '
 	addi $2, $0, 11
 	syscall
-	add $4, $0, 'x'
+	addi $4, $0, 'x'
 	addi $2, $0, 11
 	syscall
 	jal formatar
 	add $4, $0, $10
 	addi $2, $0, 1
 	syscall
-	add $4, $0, '='
+	jal espacoAntesIgual # parte 1 caderno
+	addi $4, $0, '='
 	addi $2, $0, 11
 	syscall
 	slt $15, $12, $13
@@ -46,16 +47,12 @@ forInt:
 	j forInt
 
 fimForInt:
-	addi $4, $0, '\n'
-	addi $2, $0, 11
-	syscall
+	jal quebraLinha
 	addi $10, $10, 1
-	j forExt
+	j forExt # parte 2 caderno
 
 fimFor1:
-	addi $4, $0, '\n'
-	addi $2, $0, 11
-	syscall
+	jal quebraLinha
 	addi $9, $0, 7 # range j
 	addi $10, $0, 1 # i
 	
@@ -80,9 +77,10 @@ forInt2:
 	add $4, $0, $10
 	addi $2, $0, 1
 	syscall
+	jal espacoAntesIgual
 	addi $4, $0, '='
 	addi $2, $0, 11
-	syscall
+	syscall # parte 3 caderno
 	slt $15, $12, $13
 	jal formatar
 	add $4, $0, $12
@@ -99,24 +97,20 @@ forInt2:
 	j forInt2
 	
 fimForInt2:
-	addi $4, $0, '\n'
-	addi $2, $0, 11
-	syscall
+	jal quebraLinha
 	addi $10, $10, 1
 	j forExt2
 	
 	
 	
 fimFor2:
-	addi $4, $0, '\n'
-	addi $2, $0, 11
-	syscall
+	jal quebraLinha
 	addi $9, $0, 10 # range j
 	addi $10, $0, 1 # i
 	
 forExt3:
 	beq $8, $10, fimFor3
-	addi $11, $0, 7 # j
+	addi $11, $0, 7 # j # parte 4 caderno
 	
 forInt3:
 	beq $9, $11, fimForInt3
@@ -136,6 +130,7 @@ forInt3:
 	add $4, $0, $10
 	addi $2, $0, 1
 	syscall
+	jal espacoAntesIgual
 	addi $4, $0, '='
 	addi $2, $0, 11
 	syscall
@@ -149,22 +144,18 @@ forInt3:
 	syscall
 	addi $4, $0, ' '
 	addi $2, $0, 11
-	syscall
+	syscall # parte 5 caderno
 	
 	addi $11, $11, 1
 	j forInt3
 	
 fimForInt3:
-	addi $4, $0, '\n'
-	addi $2, $0, 11
-	syscall
+	jal quebraLinha
 	addi $10, $10, 1
 	j forExt3
 	
 fimFor3:
-	addi $4, $0, '\n'
-	addi $2, $0, 11
-	syscall
+	jal quebraLinha
 	addi $9, $0, 11 # range j
 	addi $10, $0, 1 # i
 
@@ -180,13 +171,17 @@ forInt4:
 	add $4, $0, $11
 	addi $2, $0, 1
 	syscall
-	addi $4, $0, 'x'
+	addi $4, $0, ' '
 	addi $2, $0, 11
 	syscall
+	addi $4, $0, 'x'
+	addi $2, $0, 11
+	syscall # parte 6 caderno
 	jal formatar
 	add $4, $0, $10
 	addi $2, $0, 1
 	syscall
+	jal espacoAntesIgual
 	addi $4, $0, '='
 	addi $2, $0, 11
 	syscall
@@ -200,9 +195,7 @@ forInt4:
 	j forInt4
 
 fimForInt4:
-	addi $4, $0, '\n'
-	addi $2, $0, 11
-	syscall
+	jal quebraLinha
 	addi $10, $10, 1
 	j forExt4
 
@@ -210,13 +203,30 @@ fimPrograma:
 	addi $2, $0, 10
 	syscall
 
+
 formatar:
 	beq $14, $15, form
+	addi $4, $0, ' '
+	addi $2, $0, 11
+	syscall
 	jr $31
 form:
 	addi $4, $0, ' '
 	addi $2, $0, 11
 	syscall
+	addi $4, $0, ' '
+	addi $2, $0, 11
+	syscall
+	jr $31
+
+espacoAntesIgual:
+	addi $4, $0, ' '
+	addi $2, $0, 11
+	syscall
 	jr $31
 	
-	
+quebraLinha:
+	addi $4, $0, '\n'
+	addi $2, $0, 11
+	syscall
+	jr $31
