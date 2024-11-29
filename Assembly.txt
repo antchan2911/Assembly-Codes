@@ -68,3 +68,19 @@ lui -> guarda na parte alta de um regsitrador (bits 16 a 31) um valor hexadecima
 lui $destino, 0x1001 -> primeiro endereço de memoria
 
 addi $destino, $destino, 4 -> próximo endereço e por ai vai
+
+
+
+// PILHA
+
+A pilha vai salvar o valor original dos registradores do tipo $s
+
+É como se fosse passar a referência do valor original para a pilha, de forma que pudesse manipular os registradores a vontade, tipo manipular a cópia do valor e não o original
+
+Isso acontece da seguinte forma -> Os registradores do tipo $s que forem ser utilizados são salvos em ordem nos espaços vazios da pilha
+
+sw $31, 0($29) -> guarda o 31 no primeiro espaço
+
+sw #16, -4($29) -> guarda o 16($s0) no segundo espaço
+
+addi $29, $29, -12 -> direciona para o próximo endereço vazio
